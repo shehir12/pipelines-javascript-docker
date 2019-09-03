@@ -28,13 +28,8 @@ stages:
         tags: |
           $(tag)
            task: Docker@2
-- stage: Push
-  displayName: Push image
-  inputs:
-    containerRegistry: |
-      $(dockerHub)
-    repository: $(imageName)
-    command: push
-    tags: |
-      test1
-      test2
+           
+  - task: Docker@1
+    displayName: 'Push an image'
+    inputs:
+      command: push
