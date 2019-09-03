@@ -28,6 +28,7 @@ stages:
         tags: |
           $(tag)
            task: Docker@2
+- stage: Push
   displayName: Push image
   inputs:
     containerRegistry: |
